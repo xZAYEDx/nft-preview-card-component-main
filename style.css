@@ -58,7 +58,7 @@ a {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
   border-radius: var(--radius-600);
   overflow: hidden;
-  margin-top: 20rem; //phone
+  margin-top: 0.5rem; //phone
 }
 
 .card__img-container {
@@ -177,7 +177,7 @@ a {
 .attribution {
   position: absolute;
   left: 50%;
-  bottom: -38%;
+  bottom: -1%;
   transform: translateX(-50%);
   font-size: 11px;
   text-align: center;
