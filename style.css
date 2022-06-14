@@ -1,0 +1,199 @@
+:root {
+  --white: hsl(0, 0%, 100%);
+  --cyan: hsl(178, 100%, 50%);
+  --soft-blue: hsl(215, 51%, 70%);
+  --dark-blue-600: hsl(217, 54%, 11%);
+  --dark-blue-400: hsl(216, 50%, 16%);
+  --dark-blue-300: hsl(215, 32%, 27%);
+  --font-size-600: 2.2rem;
+  --font-size-400: 1.8rem;
+  --font-size-300: 1.6rem;
+  --space--700: 3.2rem;
+  --space--600: 2.4rem;
+  --space--400: 2.2rem;
+  --space--300: 1.6rem;
+  --radius-600: 1.5rem;
+  --radius-400: 1rem;
+  --footer-link-color: hsl(228, 45%, 44%);
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-size: var(--font-size-400);
+  color: var(--soft-blue);
+  background-color: var(--dark-blue-600);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nft-component {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  height: 100vh;
+}
+
+.card {
+  max-width: 35rem;
+  background-color: var(--dark-blue-400);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  border-radius: var(--radius-600);
+  overflow: hidden;
+  margin-top: 20rem; //phone
+}
+
+.card__img-container {
+  position: relative;
+  width: 30.2rem;
+  margin: var(--space--600);
+  border-radius: var(--radius-400);
+  overflow: hidden;
+}
+
+.card__img-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 255, 247, 0.5);
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+}
+
+.card__img-container img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.card__img-container .overlay-element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+}
+
+.card__img-container:hover::before,
+.card__img-container:active::before,
+.card__img-container:hover .overlay-element,
+.card__img-container:active .overlay-element {
+  opacity: 1;
+}
+
+.card__text-container {
+  max-width: 30.5rem;
+  margin: 0 auto var(--space--300) auto;
+}
+
+.card__nft-info h1 {
+  margin-bottom: var(--space--300);
+  font-size: var(--font-size-600);
+  font-weight: 600;
+  color: var(--white);
+}
+
+.card__nft-info p {
+  font-weight: 300;
+  letter-spacing: 0.0025rem;
+  line-height: 2.6rem;
+}
+
+.card__label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space--400) 0;
+  border-bottom: 1px solid var(--dark-blue-300);
+}
+
+.card__eth-info,
+.card__countdown {
+  display: flex;
+  align-items: center;
+}
+
+.card__eth-info span,
+.card__countdown span {
+  margin-left: 0.6rem;
+  font-size: var(--font-size-300);
+  letter-spacing: 0.025em;
+}
+
+.card__eth-info span {
+  font-weight: 600;
+  color: var(--cyan);
+}
+
+.card__user-info {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: var(--space--300) 0;
+}
+
+.card__user-info img {
+  width: 3.3rem;
+  margin-right: var(--space--300);
+  border: 1px solid var(--white);
+  border-radius: 99rem;
+}
+
+.card__user-info .card__user-credit {
+  font-size: var(--font-size-300);
+  font-weight: 300;
+  letter-spacing: 0.0025em;
+}
+
+.card__user-info .card__user-credit .emp {
+  font-weight: 400;
+  color: var(--white);
+}
+
+.card__nft-info:hover h1,
+.card__user-info:hover .card__user-credit .emp {
+  color: var(--cyan);
+}
+
+.attribution {
+  position: absolute;
+  left: 50%;
+  bottom: -38%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: var(--footer-link-color);
+}
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+  .card{
+      margin-top: 0; //phone
+  }
+.attribution{
+  bottom: -2.8rem;
+}
+}
